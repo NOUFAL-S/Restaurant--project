@@ -1,0 +1,22 @@
+.card{
+    border: 2px solid black;
+    margin: 20px;
+    
+}
+.card-header{
+    text-transform: uppercase;
+    font-family: fantasy;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.card-body{
+ 
+ background-color: darkgrey;
+}
+
+.table-responsive{
+    background-color: rgb(197, 221, 197);
+    border: 1px solid black;
+}

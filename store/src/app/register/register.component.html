@@ -1,0 +1,27 @@
+
+  <div class="container-fluid bg">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-sx-12"></div>
+      <div class="col-md-4 col-sm-4 col-sx-12 dg" >
+       <form #userLogin ="ngForm" (ngSubmit)="registerUser()" >
+ 
+ 
+         <h1> Register</h1>
+           <div class="form-group">
+             <label for="email">Email</label>
+             <input type="email" [(ngModel)] ="registeredUser.email" #email="ngModel"[class.is-invalid]="email.invalid && email.touched"id="email" class="form-control"  placeholder="email id" name="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+          <small class="text-danger"    [class.d-none]="email.valid || email.touched">Enter a valid email</small>
+            </div>
+           <div class="form-group">
+            <label for="pwd">Password</label>
+            <input type="password" [(ngModel)] ="registeredUser.password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" class="form-control" id="pwd" placeholder="password" name="password" minlength="6" required>
+            <small class="text-danger" [class.d-none]="password.valid || password.touched">Enter a valid password</small>
+          </div>
+          <button type="submit" [disabled]="userLogin.form.invalid  " class="btn btn-primary btn-block">Register</button>
+         
+       </form>
+     
+      </div>
+      <div class="col-md-4 col-sm-4 col-sx-12"></div>
+   </div>
+  

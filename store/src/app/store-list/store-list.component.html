@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-header">{{title}}</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary"(click)="toggleImage()">
+                                {{showImage?'Hide':'Show'}} Image
+                            </button>
+                        </th>
+                        <th>store</th>
+                        <th>Code</th>
+                        <th>Available</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>5 Star Rating</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor ='let store of stores'>
+                        <td><img *ngIf='showImage' 
+                            [src]='store.imageUrl'
+                            [title] ='store.storeName'
+                            [style.width.px] = 'imageWidth'
+                            [style.margin.px] ='imageMargin'></td>
+                            <td>{{store.storeName}}</td>
+                            <td>{{store.storeCode}}</td>
+                            <td>{{store.releaseDate}}</td>
+                            <td>{{store.description}}</td>
+                            <td>{{store.price}}</td>
+                            <td>{{store.starRating}}</td>
+                            <td>
+                                <!-- <a class="action-btn">
+                                    <i class="material-icons">edit</i>
+                                </a><br> -->
+                                <button class="btn btn-primary" (click)="doUpdate(store)" style="margin-right:10px">Update</button>
+                                <!-- <a class="action-btn">
+                                    <i class="material-icons">delete</i>
+                                </a> -->
+                                <button class="btn btn-danger"(click)="deleteItem(store)">Delete</button>
+                            </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

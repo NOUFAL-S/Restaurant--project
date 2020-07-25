@@ -1,0 +1,35 @@
+<!-- <h1>{{title}}</h1> -->
+<!-- <div class="card-header">
+    <a routerLink='/'>Products</a>
+    <a routerLink='/add'>Add Product</a>
+</div> -->
+
+
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <!-- <a class="navbar-brand" href="#">Product</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"> 
+           <a class="nav-link" routerLink='/' > Stores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/add'  *ngIf="_auth.loggedIn()"> Add Store</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link"routerLink='/login'  *ngIf="!_auth.loggedIn()" routerLinkActive="active"> Login</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" routerLink='/register'*ngIf="!_auth.loggedIn()" routerLinkActive="active"> Register</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" style="cursor: pointer;"   *ngIf="_auth.loggedIn()"(click)="_auth.logoutUser()"> LogOut</a>
+        </li>
+  
+      </ul>
+  
+    </div>
+  </nav>
+  
