@@ -1,5 +1,5 @@
 const mongoose =require('mongoose');
-// mongoose.connect("mongodb+srv://user_hareesh:Charmcaster@mycluster.zfaab.azure.mongodb.net/StoreDb?retryWrites=true&w=majority");
+
 
 
 mongoose.Promise = global.Promise;
@@ -12,9 +12,9 @@ mongoose.connect('mongodb+srv://Noufal:Noufal@cluster0.curyp.mongodb.net/restaur
  const Schema = mongoose.Schema;
 var NewStoreSchema = new Schema({
     // _id:String,
-    StoreId:Number,
-    StoreName:String,
-    StoreCode:String,
+    // StoreId:Number,
+    storeName:String,
+    storeCode:String,
     releaseDate:String,
     description:String,
     price:Number,
@@ -22,5 +22,5 @@ var NewStoreSchema = new Schema({
     imageUrl:String
 });
 
-module.exports = mongoose.model('StoreData',NewStoreSchema,'Stores');
+module.exports = mongoose.model('StoreData',NewStoreSchema,'stores');
 

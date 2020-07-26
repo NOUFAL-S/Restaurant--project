@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// mongoose.connect("mongodb+srv://user_hareesh:Charmcaster@mycluster.zfaab.azure.mongodb.net/ProductDb?retryWrites=true&w=majority");
+
 
 mongoose.Promise = global.Promise;
 

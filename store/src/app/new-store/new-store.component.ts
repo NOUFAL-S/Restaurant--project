@@ -10,7 +10,7 @@ import{Router} from '@angular/router';
 export class NewStoreComponent implements OnInit {
   title:String='Store  Add';
   constructor(private storeService:StoreService,private router:Router) { }
-storeItem=new StoreModel(null,null,null,null,null,null,null,null);
+storeItem=new StoreModel(null,null,null,null,null,null,null);
   ngOnInit(): void {
   }
  AddStore()

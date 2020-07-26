@@ -9,9 +9,9 @@ import{StoreModel} from '../store-list/store.model';
   styleUrls: ['./edit-store.component.css']
 })
 export class EditStoreComponent implements OnInit {
-  title:String='Product Edit';
+  title:String='Store Edit';
 stores:StoreModel[];
-store =new StoreModel(null,null,null,null,null,null,null,null);
+store =new StoreModel(null,null,null,null,null,null,null);
   constructor(private storeService:StoreService,private router:Router) { }
 
   ngOnInit(): void {
