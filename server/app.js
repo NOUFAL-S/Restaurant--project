@@ -36,7 +36,7 @@ app.post("/insert", verifyToken, function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTION");
   console.log(req.body);
-  var Store = {
+  var store = {
     //    StoreId:req.body.Store.StoreId,
     storeName: req.body.store.storeName,
     storeCode: req.body.store.storeCode,
@@ -45,6 +45,7 @@ app.post("/insert", verifyToken, function (req, res) {
     price: req.body.store.price,
     starRating: req.body.store.starRating,
     imageUrl: req.body.store.imageUrl,
+    
   };
   var store = new StoreData(store);
   store.save().then(function (store) {

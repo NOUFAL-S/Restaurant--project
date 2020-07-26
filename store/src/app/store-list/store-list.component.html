@@ -1,51 +1,26 @@
-<div class="card">
-    <div class="card-header">{{title}}</div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            <button class="btn btn-primary"(click)="toggleImage()">
-                                {{showImage?'Hide':'Show'}} Image
-                            </button>
-                        </th>
-                        <th>store</th>
-                        <th>Code</th>
-                        <th>Available</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>5 Star Rating</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor ='let store of stores'>
-                        <td><img *ngIf='showImage' 
-                            [src]='store.imageUrl'
-                            [title] ='store.storeName'
-                            [style.width.px] = 'imageWidth'
-                            [style.margin.px] ='imageMargin'></td>
-                            <td>{{store.storeName}}</td>
-                            <td>{{store.storeCode}}</td>
-                            <td>{{store.releaseDate}}</td>
-                            <td>{{store.description}}</td>
-                            <td>{{store.price}}</td>
-                            <td>{{store.starRating}}</td>
-                            <td>
-                                <!-- <a class="action-btn">
-                                    <i class="material-icons">edit</i>
-                                </a><br> -->
-                                <button class="btn btn-primary" (click)="doUpdate(store)" style="margin-right:10px">Update</button>
-                                <!-- <a class="action-btn">
-                                    <i class="material-icons">delete</i>
-                                </a> -->
-                                <button class="btn btn-danger"(click)="deleteItem(store)">Delete</button>
-                            </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
+
+<div class="container-fluid">
+<div class="row row-cols-1 row-cols-md-3" >
+    <div class="col mb-4" *ngFor ='let store of stores'>
+      <div class="card h-100" class="card border-dark mb-3">
+        <img [src]='store.imageUrl'  class="card-img-top" alt="image....">
+        <div class="card-body">
+          <h3 class="card-title">  {{store.storeName}}</h3>
+          <p class="card-text">{{store.releaseDate}}</p>
+              <p class="card-text">{{store.description}}</p>
+              <p class="card-text">{{store.storeCode}}</p>
+              <p class="card-text">{{store.starRating}}</p>
+              
+              <i type="button" class="fas fa-edit" data-toggle="tooltip" data-placement="bottom"  title="Update"   (click)="doUpdate(store)" ></i>              
+              <i type="button" class="fas fa-trash-alt" data-toggle="tooltip" data-placement="bottom"  title="Delete" (click)="deleteItem(store)"></i>
+
+
+ 
+
+
+
         </div>
+        <small class="text-muted">Last updated {{store.date}}</small>
+      </div>
     </div>
-</div>
+</div> 

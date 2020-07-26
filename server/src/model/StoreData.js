@@ -13,6 +13,7 @@ mongoose.connect('mongodb+srv://Noufal:Noufal@cluster0.curyp.mongodb.net/restaur
 var NewStoreSchema = new Schema({
     // _id:String,
     // StoreId:Number,
+    date: { type: Date, default: Date.now },
     storeName:String,
     storeCode:String,
     releaseDate:String,

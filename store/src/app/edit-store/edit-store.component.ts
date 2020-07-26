@@ -11,7 +11,7 @@ import{StoreModel} from '../store-list/store.model';
 export class EditStoreComponent implements OnInit {
   title:String='Store Edit';
 stores:StoreModel[];
-store =new StoreModel(null,null,null,null,null,null,null);
+store =new StoreModel(null,null,null,null,null,null,null,null);
   constructor(private storeService:StoreService,private router:Router) { }
 
   ngOnInit(): void {

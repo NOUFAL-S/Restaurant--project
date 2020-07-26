@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(public _auth :AuthService){}
 
-title:String ="Product Management";
+title:String ="Store Management";
   ngOnInit(): void {
   }
 

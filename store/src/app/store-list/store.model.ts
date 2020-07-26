@@ -2,6 +2,7 @@ export class StoreModel {
   constructor(
     // public _id:String,
     // public storeId:Number,
+    public date: { type: Date },
     public storeName: String,
     public storeCode: String,
     public releaseDate: String,

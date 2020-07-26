@@ -6,9 +6,23 @@ import { EditStoreComponent } from './edit-store/edit-store.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {AuthGuard} from './auth.guard';
-const routes: Routes = [{path:"",component:StoreListComponent,    canActivate:[AuthGuard]},
-{path:'add',component:NewStoreComponent, canActivate:[AuthGuard]},
-{path:'edit',component:EditStoreComponent},
+const routes: Routes =
+ [
+  {
+     path:"",
+     component:StoreListComponent,  
+       canActivate:[AuthGuard]
+  },
+  {
+    path:'add',
+    component:NewStoreComponent,
+     canActivate:[AuthGuard]
+  },
+
+  {   
+     path:'edit',
+     component:EditStoreComponent
+  },
 {
   path:'login',
   component:LoginComponent
@@ -16,7 +30,8 @@ const routes: Routes = [{path:"",component:StoreListComponent,    canActivate:[A
 {
   path:'register',
   component:RegisterComponent
-}];
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
