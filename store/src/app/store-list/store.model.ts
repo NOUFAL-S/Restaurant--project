@@ -4,10 +4,11 @@ export class StoreModel {
     // public storeId:Number,
     public date: { type: Date },
     public storeName: String,
+    public storePlace: String,
     public storeCode: String,
     public releaseDate: String,
     public description: String,
-    public price: Number,
+    public price: String,
     public starRating: Number,
     public imageUrl: String
   ) {}

@@ -1,22 +1,27 @@
-.card{
-    border: 2px solid black;
-    margin: 20px;
-    
+.card {
+  border: 2px solid #000000;
+  margin: 20px;
 }
-.card-header{
-    text-transform: uppercase;
-    font-family: fantasy;
-    font-weight: 700;
-    font-size: 30px;
-    letter-spacing: 1px;
-}
-
-.card-body{
- 
- background-color: darkgrey;
+.card-header {
+  text-transform: uppercase;
+  font-family: fantasy;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 1px;
 }
 
-.table-responsive{
-    background-color: darkseagreen;
-    border: 1px solid black;
+.card-body {
+  background-color: #015961;
+  color: aliceblue;
+}
+
+.table-responsive {
+  background-color: #eff7f8;
+  border: 1px solid black;
+}
+
+label {
+  color: rgb(0, 0, 0);
+  font-weight: lighter;
+  font-family: "Segoe UI";
 }

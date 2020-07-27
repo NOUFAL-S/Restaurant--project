@@ -17,6 +17,7 @@ function verifyToken(req, res, next) {
     return res.status(401).send("Unauthorized request");
   }
   let payload = jwt.verify(token, "secretKey");
+
   if (!payload) {
     return res.status(401).send("Unauthorized request");
   }
@@ -30,22 +31,20 @@ app.get("/stores", verifyToken, (req, res) => {
   StoreData.find().then(function (stores) {
     res.send(stores);
   });
-  // res.send("Hello mongo");
 });
 app.post("/insert", verifyToken, function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTION");
   console.log(req.body);
   var store = {
-    //    StoreId:req.body.Store.StoreId,
     storeName: req.body.store.storeName,
+    storePlace: req.body.store.storePlace,
     storeCode: req.body.store.storeCode,
     releaseDate: req.body.store.releaseDate,
     description: req.body.store.description,
     price: req.body.store.price,
     starRating: req.body.store.starRating,
     imageUrl: req.body.store.imageUrl,
-    
   };
   var store = new StoreData(store);
   store.save().then(function (store) {
@@ -56,14 +55,12 @@ app.post("/insert", verifyToken, function (req, res) {
 app.put("/edit", function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTION");
-  //    console.log(req.body);
-  //    Store.findANd(req.body._id,(err,Store)=>{
-  //    if(err)
+
   const id = req.body.store._id;
-  //    res.status(500).json({errmsg:err});
+
   var store = {
-    // StoreId:req.body.Store.StoreId,
     storeName: req.body.store.storeName,
+    storePlace: req.body.store.storePlace,
     storeCode: req.body.store.storeCode,
     releaseDate: req.body.store.releaseDate,
     description: req.body.store.description,
@@ -73,14 +70,12 @@ app.put("/edit", function (req, res, next) {
   };
 
   console.log(store);
-  // var Store = new StoreData(Store);
-  // Store.save();
 
   StoreData.findByIdAndUpdate(id, { $set: store }, (err, doc) => {
     if (!err) {
       res.send(doc);
     } else {
-      console.log("Error");
+      console.log("Error in Restaurant Update ");
     }
   });
 });
@@ -88,14 +83,14 @@ app.put("/edit", function (req, res, next) {
 app.delete("/delete/:id", function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTION");
-  // var id=req.params.id;
+
   console.log(req.params.id);
 
   StoreData.findByIdAndDelete(req.params.id, (err, doc) => {
     if (!err) {
       res.send(doc);
     } else {
-      console.log("Error");
+      console.log("Error in Restaurant Delete ");
     }
   });
 });
@@ -110,8 +105,6 @@ app.post("/register", (req, res) => {
       let payload = { subject: user._id };
       let token = jwt.sign(payload, "secretKey");
       res.status(200).send({ token });
-
-      // res.status(200).send(registeredUser)
     }
   });
 });
@@ -130,8 +123,6 @@ app.post("/login", (req, res) => {
         let payload = { subject: user._id };
         let token = jwt.sign(payload, "secretKey");
         res.status(200).send({ token });
-
-        // res.status(200).send(user)
       }
     }
   });

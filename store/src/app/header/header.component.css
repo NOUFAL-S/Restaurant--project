@@ -1,0 +1,27 @@
+a,
+#logout {
+  color: white;
+}
+
+#logout:hover {
+  color: rgb(0, 0, 0);
+  transition: ease-in-out;
+}
+
+a:hover {
+  color: black;
+  transform: scale(1.2);
+  transition: ease-in-out;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  margin: 0 auto;
+  box-shadow: 
+    /* logo shadow */ 0px 0px 2px #00eaff,
+    /* offset */ /* 0px 0px 0px 5px #005158, */ /*bottom right */ 8px 8px 15px
+      #005158,
+    /* top left */ -8px -8px 15px #005158;
+}

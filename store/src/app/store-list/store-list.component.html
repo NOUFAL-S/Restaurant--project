@@ -1,26 +1,71 @@
-
+<!-- Card -->
 <div class="container-fluid">
-<div class="row row-cols-1 row-cols-md-3" >
-    <div class="col mb-4" *ngFor ='let store of stores'>
-      <div class="card h-100" class="card border-dark mb-3">
-        <img [src]='store.imageUrl'  class="card-img-top" alt="image....">
-        <div class="card-body">
-          <h3 class="card-title">  {{store.storeName}}</h3>
-          <p class="card-text">{{store.releaseDate}}</p>
-              <p class="card-text">{{store.description}}</p>
-              <p class="card-text">{{store.storeCode}}</p>
-              <p class="card-text">{{store.starRating}}</p>
-              
-              <i type="button" class="fas fa-edit" data-toggle="tooltip" data-placement="bottom"  title="Update"   (click)="doUpdate(store)" ></i>              
-              <i type="button" class="fas fa-trash-alt" data-toggle="tooltip" data-placement="bottom"  title="Delete" (click)="deleteItem(store)"></i>
-
-
- 
-
-
-
-        </div>
-        <small class="text-muted">Last updated {{store.date}}</small>
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="card booking-card" *ngFor="let store of stores">
+      <!-- Card image -->
+      <div class="view overlay">
+        <img class="card-img-top" [src]="store.imageUrl" alt="Card image " />
+        <a routerLink="/top">
+          <div class="mask rgba-white-slight"></div>
+        </a>
       </div>
+
+      <!-- Card content -->
+      <div class="card-body">
+        <!-- Title -->
+        <h3 class="card-title font-weight-bold">
+          <a>{{ store.storeName }}</a>
+        </h3>
+        <!-- Data -->
+        <ul class="list-unstyled list-inline rating mb-0">
+          <li class="list-inline-item mr-0">
+            <i class="fas fa-star amber-text"> </i>
+          </li>
+          <li class="list-inline-item mr-0">
+            <i class="fas fa-star amber-text"></i>
+          </li>
+          <li class="list-inline-item mr-0">
+            <i class="fas fa-star amber-text"></i>
+          </li>
+          <li class="list-inline-item mr-0">
+            <i class="fas fa-star amber-text"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fas fa-star-half-alt amber-text"></i>
+          </li>
+          <li class="list-inline-item">
+            <p class="text-muted">({{ store.starRating }})</p>
+          </li>
+        </ul>
+
+        <b> <p class="mb-2">{{ store.storePlace }}</p></b>
+        <p class="mb-2">Cuisines:-  {{ store.storeCode }}</p>
+        <p class="mb-2">{{ store.releaseDate }}</p>
+        <p class="mb-2">₹ {{ store.price }}</p>
+        <!-- Text -->
+        <p class="card-text">{{ store.description }}</p>
+        <hr class="my-4" />
+        
+        <!-- Button -->
+        <i
+          type="button"
+          class="fas fa-edit"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Update"
+          (click)="doUpdate(store)"
+        ></i>
+        <i
+          type="button"
+          class="fas fa-trash-alt"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Delete"
+          (click)="deleteItem(store)"
+        ></i>
+      </div>
+      <small class="text-muted">Last updated {{ store.date }}</small>
     </div>
-</div> 
+  </div>
+</div>
+<!-- Card -->

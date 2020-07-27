@@ -1,53 +1,125 @@
 <div class="card">
-    <form (ngSubmit)="Update()" >
-        <div class="card-header">
-           {{title}}
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table">
-                    <!-- <input type="text" name="_id"  [(ngModel)]="store._id"> -->
-                    <tbody>
-                        <!-- <tr>
-                        <td><label>store Id</label></td>
-                        <td>
-                            <input type="text" name="p_id"  [(ngModel)]="store.storeId">
-                        </td></tr> -->
-                        <tr>
-                            <td><label>store Name</label></td>
-                            <td><input type="text" name="p_name"  [(ngModel)]="store.storeName"></td>
-                        </tr>
-                        <tr>
-                            <td><label>store Code</label></td>
-                            <td><input type="text" name="p_code"  [(ngModel)]="store.storeCode"></td>
-                        </tr>
-                        <tr>
-                            <td><label>store date</label></td>
-                            <td><input type="text" name="p_date"  [(ngModel)]="store.releaseDate"></td>
-                        </tr>
-                        <tr>
-                            <td><label>store desc</label></td>
-                            <td><input type="text" name="p_desc"  [(ngModel)]="store.description"></td>
-                        </tr>
-                        <tr>
-                            <td><label>store Price</label></td>
-                            <td><input type="text" name="p_price"  [(ngModel)]="store.price"></td>
-                        </tr>
-                        <tr>
-                            <td><label>store Starrating</label></td>
-                            <td><input type="text" name="p_rating"  [(ngModel)]="store.starRating"></td>
-                        </tr>
-                        <tr>
-                            <td><label>store imageUrl</label></td>
-                            <td><input type="text" name="p_image"  [(ngModel)]="store.imageUrl"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="submit" value="Submit" ></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </form>
+  <form (ngSubmit)="Update()">
+    <div class="card-header">
+      {{ title }}
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <label><b>Restaurant Name</b></label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="p_name"
+                  [(ngModel)]="store.storeName"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><b>Restaurant Place</b></label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="p_place"
+                  [(ngModel)]="store.storePlace"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><b>Restaurant Type</b></label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="p_code"
+                  [(ngModel)]="store.storeCode"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><b>Restaurant Established Date</b></label>
+              </td>
+              <td>
+                <input
+                  type="date"
+                  name="p_date"
+                  [(ngModel)]="store.releaseDate"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><b>Restaurant description</b></label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="p_desc"
+                  [(ngModel)]="store.description"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><b>Cost for two ₹</b></label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="p_price"
+                  [(ngModel)]="store.price"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><b>Restaurant rating</b></label>
+              </td>
+              <td>
+                <input
+                  type="number"
+                  max="5"
+                  name="p_rating"
+                  [(ngModel)]="store.starRating"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><b>Restaurant imageUrl</b></label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="p_image"
+                  [(ngModel)]="store.imageUrl"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="submit" class="btn btn-dark" value="Submit" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </form>
 </div>
