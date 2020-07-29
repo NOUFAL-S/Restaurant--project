@@ -1,0 +1,9 @@
+.conitainer{
+    display: flex;
+    text-align: start;
+    justify-content: space-evenly;
+   padding: .5cm;
+   height: 80vh;
+   
+    
+}

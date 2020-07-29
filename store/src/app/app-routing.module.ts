@@ -8,11 +8,18 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
+import { ContactusComponent } from './contactus/contactus.component';
+
 
 const routes: Routes = [
   {
     path: '',
     component: StoreListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'contact',
+    component: ContactusComponent,
     canActivate: [AuthGuard],
   },
  

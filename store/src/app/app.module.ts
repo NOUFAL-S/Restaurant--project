@@ -13,6 +13,7 @@ import { NgModule } from '@angular/core';
 
 import { AgmCoreModule } from '@agm/core';
 
+
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
@@ -22,8 +23,9 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { ContactComponent } from './contact/contact.component';
+
 import { MapComponent } from './map/map.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +38,11 @@ import { MapComponent } from './map/map.component';
     LoginComponent,
     HomeComponent,
     FooterComponent,
-    ContactComponent,
+    ContactusComponent,
     MapComponent,
+    ContactusComponent,
+  
+    
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { MapComponent } from './map/map.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBFxd7zA-DXSDIyVCWDa5AbfDAy4CeXK0Q',
     }),
+    
   ],
   providers: [
     AuthService,

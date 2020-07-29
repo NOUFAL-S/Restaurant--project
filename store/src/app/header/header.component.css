@@ -1,27 +1,29 @@
-a,
-#logout {
-  color: white;
-}
-
-#logout:hover {
-  color: rgb(0, 0, 0);
-  transition: ease-in-out;
-}
 
 a:hover {
   color: black;
   transform: scale(1.2);
   transition: ease-in-out;
 }
+.navbar.navbar-dark .navbar-nav .nav-item.active > .nav-link {
+  background-color: #00695c;
+}
+.navbar-nav .nav-link {
+ 
+  padding-left: 26px;
+  font-size: larger;
+}
+
+.bg-dark {
+  background-color: #00695c !important;
+}
 
 img {
-  width: 50px;
-  height: 50px;
-  border-radius: 20%;
-  margin: 0 auto;
-  box-shadow: 
-    /* logo shadow */ 0px 0px 2px #00eaff,
-    /* offset */ /* 0px 0px 0px 5px #005158, */ /*bottom right */ 8px 8px 15px
-      #005158,
-    /* top left */ -8px -8px 15px #005158;
+  width: 62px;
+  height: 58px;
+  border-radius: 12%;
+  box-shadow: 0px 0px 2px #7d7d7d, 8px 8px 15px #113238, -8px -8px 15px #5f6263;
+}
+imag:hover {
+  transition: ease-in-out;
+  transform: scale(1.1);
 }

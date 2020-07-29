@@ -23,9 +23,11 @@ export class NewStoreComponent implements OnInit {
     null
   );
   ngOnInit(): void {}
+
+
   AddStore() {
     this.storeService.newStore(this.storeItem);
-    console.log('called');
+    
     alert('Restaurant added');
     this.router.navigate(['/']);
   }
